@@ -1,0 +1,46 @@
+.container-menu{
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+
+}
+.menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.menu li{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.menu li a{
+    
+    padding: 5px 10px;
+    display: block;
+    font-weight: 500;
+    transition: backgroud 0.3s, color 0.3s;
+}
+
+.menu li a:hover{
+    background: #959b9a;
+    color: rgb(238, 233, 233);
+    text-shadow: 0px 0px 5px #fff;
+    border-radius: 5px;
+}
+
+.menu li ul{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(34, 34, 36);
+    display: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px #ccc;
+    z-index: 10;
+}

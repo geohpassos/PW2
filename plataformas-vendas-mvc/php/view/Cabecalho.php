@@ -1,34 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <header class="container-header">
-        <div class="logo-principal">
-            <img src="" alt="">
-            <h2>Tanaka AutoPeças</h2>
-        </div>
+<?php
+require_once '../model/Conexao.php';
+require_once '../model/Menu.php';
 
-        <div class="container-menu">
-            <nav>
-                <ul class="menu">
-                    <li><a href="../view/Home.php">Home</a></li>
-                    <li>Produtos
+$db = new Conexao();
+$conn = $db -> connect();
+
+$menuObj = new Menu($conn);
+$menu = $menuObj -> getMenuCompleto();
+?>
+<header class="container-header">
+    <div class="logo-principal">
+        <img>
+        <h2>Tanaka Autopeças</h2>
+    </div>
+    <div class="container-menu">        
+        <nav>
+            <ul class="menu">
+                <li><a href="../view/Home.php">Home</a></li>
+                <?php foreach($menu as $categoria => $subcategoria): ?>                
+                    <li><a href=""><?php echo $categoria; ?></a>
                         <ul>
-                            <li>Cabo de embreagem</li>
+                            <?php foreach($subcategoria as $sub): ?>
+                                <li>
+                                    <a href="../view/card.php?subcategoria=<?php echo urlencode($sub);?>">
+                                    <?php echo $sub; ?> 
+                                    </a>
+                                </li>
+                                <?php endforeach; ?>
                         </ul>
-                    </li>
-                    <li><a href="../view/Contatos.php">Contatos</a></li>
-                    <li><a href="../view/Carrinhos.php">Carrinho</a></li>
-                    <li><a href="../view/Sobre.php">Sobre</a></li>
+                    </li>  
+                <?php endforeach; ?>
+                <li><a href="../view/Sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
 
-                </ul>
-            </nav>
-        </div>
-        
-    </header>
-</body>
-</html>
+    </div>
+</header>

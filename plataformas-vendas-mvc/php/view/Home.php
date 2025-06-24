@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
 
+    <link rel="stylesheet" type="text/css" href="./../../css/container-layout/reset.css">
+
     <link rel="stylesheet" type="text/css" href="./../../css/container-layout/cabecalho.css">
     <link rel="stylesheet" type="text/css" href="./../../css/componentes/carrosel.css">
+    <link rel="stylesheet" type="text/css" href="./../../css/componentes/menu.css">
+    <link rel="stylesheet" type="text/css" href="./../../css/container-layout/principal.css">
 </head>
 <body>
     <!-- cabeçalho -->
@@ -26,6 +30,6 @@
             <button class="next" onclick="mudarSlide(1)"></button>
         </div>
     </main>
-    <script src="./../../js/carrosel.js"></script>
+    <script src="./../../js/carrossel.js"></script>
 </body>
 </html>
