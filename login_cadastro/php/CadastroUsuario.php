@@ -1,6 +1,7 @@
 <?php
 require_once 'Conexao.php';
 
+
 $email = $_POST["email"];
 $telefone = $_POST["telefone"];
 $senha = $_POST["senha"];
@@ -19,9 +20,44 @@ if(!empty($email) && !empty($telefone) && !empty($senha)){
 
     try{
         $requisicao->execute();
-        echo"Usuario cadastrado com sucesso!";
+        echo' <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Cadastro</title>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            Swal.fire({
+                title: "Cadastro Realizado",
+                text: "Cadastro concluído com Sucesso.",
+                icon: "success",
+                confirmButtonText: "Login",
+            }).then(function() {
+                window.location = "http://localhost/login_cadastro/html/index.html";
+            });
+        </script>
+    </body>
+    </html>';
     }catch(PDOException $e){
-        echo"Erro ao cadastrar usuario" .$e ->getMessage();
+        echo ' <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Cadastro</title>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+              Swal.fire({
+            title: "Erro!",
+            text: "Erro na finalização",
+            icon: "error",
+            confirmButtonText: "Tente Novamente"
+
+        })
+        </script>
+    </body>
+    </html>'.$e ->getMessage();
 
     }
     
@@ -29,3 +65,4 @@ if(!empty($email) && !empty($telefone) && !empty($senha)){
     echo'<p style="color: red">PREENCHA TODOS OS CAMPOS!!!!</p>';
 }
 ?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

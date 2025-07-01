@@ -1,13 +1,12 @@
-function cadastro(event){
-    event.preventDefault();
+function cadastro(){
 
-    var  cpf =  document.getElementById('cpf').value;
+    
     var senha = document.getElementById('senha').value;
     var email = document.getElementById('email')
     var telefone = document.getElementById('telefone') 
-    var novousuario = {cpf, senha, email,telefone}
+    var novousuario = {senha, email,telefone}
     
-   if(email=="admin01@mais" || cpf=="12345678" || telefone=="098765" && senha=="admin01"){
+   
         Swal.fire({
             title: 'Cadastrado Realizado!',
             text: 'Vamos Logar!',
@@ -21,7 +20,7 @@ function cadastro(event){
         });
     }
     
-    else{
+    
         Swal.fire({
             title: 'Erro!',
             text: 'Erro na finalização',
@@ -29,6 +28,5 @@ function cadastro(event){
             confirmButtonText: 'Tente Novamente'
 
         })
-    }
     
-}
+    

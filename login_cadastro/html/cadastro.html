@@ -11,7 +11,7 @@
 </head>
 <body class="principal">
     <div class="formulario">
-        <form id="form-login" onsubmit="cadastro(event)" method="POST" action="../php/CadastroUsuario.php">
+        <form id="form-login" method="POST" action="../php/CadastroUsuario.php">
             <div class="imagem">
             <img src="./img/logo2.PNG" alt="">
             </div>
@@ -21,11 +21,10 @@
      required="true" minlength="3">
     <br>
     <input type="tel" name="telefone" placeholder="Telefone" id="telefone">
-    <input type="password" name="senha" id="senha" 
-    required="true" minlength="3">
+    <input type="password" name="senha" id="senha" placeholder="Senha" required="true" minlength="3">
     <br>
     <a href="./index.html" id="link" >Login</a><br><br>
-    <input type="submit" value="Entrar" onclick="cadastro();return false;" id="botao">
+    <input type="submit" value="Cadastrar">
 
     <br>
     
